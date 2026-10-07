@@ -1,0 +1,289 @@
+[gd_scene format=3 uid="uid://fwvk6h1k10oq"]
+
+[ext_resource type="Script" uid="uid://bdk18uiddu2kr" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
+[ext_resource type="PackedScene" uid="uid://cy6nelu8t38ky" path="res://scenes/game_menu/game_menu.tscn" id="2_0ebjn"]
+[ext_resource type="Texture2D" uid="uid://dnnbkf4aq43oh" path="res://assets/icones/fanion.png" id="3_ob46e"]
+[ext_resource type="Texture2D" uid="uid://y3736got0c5u" path="res://assets/atlas/icons_atlas_128.png" id="4_uqeha"]
+[ext_resource type="Texture2D" uid="uid://bncppdw50vfg0" path="res://assets/atlas/level_atlas.png" id="4_wem23"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thkx5"]
+atlas = ExtResource("4_wem23")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2yjq"]
+atlas = ExtResource("4_uqeha")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wem23"]
+atlas = ExtResource("4_uqeha")
+region = Rect2(896, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ovsr"]
+atlas = ExtResource("4_uqeha")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5seab"]
+atlas = ExtResource("4_uqeha")
+region = Rect2(768, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xg86"]
+atlas = ExtResource("4_uqeha")
+region = Rect2(896, 128, 128, 128)
+
+[sub_resource type="Gradient" id="Gradient_1b6gl"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fsom3"]
+gradient = SubResource("Gradient_1b6gl")
+
+[node name="MainMenu" type="Control" unique_id=480827976]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsom3")
+
+[node name="Menu" type="Control" parent="." unique_id=1892041384]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameMenu" parent="Menu" unique_id=324072585 instance=ExtResource("2_0ebjn")]
+layout_mode = 1
+
+[node name="HeaderNavigation" type="Panel" parent="." unique_id=59040639]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HeaderNavigation" unique_id=663879823]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="HeaderNavigation/HBoxContainer" unique_id=1122654387]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="HeaderNavigation/HBoxContainer" unique_id=1446349991]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Level" type="Control" parent="HeaderNavigation/HBoxContainer" unique_id=1013081820]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelFlag" type="TextureRect" parent="HeaderNavigation/HBoxContainer/Level" unique_id=757701244]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 30.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ob46e")
+
+[node name="LevelIcon" type="TextureRect" parent="HeaderNavigation/HBoxContainer/Level" unique_id=1498136405]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.5
+offset_top = -25.0
+offset_right = 18.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_thkx5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LevelLabel" type="Label" parent="HeaderNavigation/HBoxContainer/Level" unique_id=1830039465]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 80.0
+offset_right = 20.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="Currency" type="Control" parent="HeaderNavigation/HBoxContainer" unique_id=1378023784]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HeaderNavigation/HBoxContainer/Currency" unique_id=542390990]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_x2yjq")
+expand_mode = 1
+
+[node name="Settings" type="Button" parent="HeaderNavigation/HBoxContainer" unique_id=1702635237]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HeaderNavigation/HBoxContainer/Settings" unique_id=1207335167]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_wem23")
+
+[node name="Footer" type="Control" parent="." unique_id=1098782789]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Footer" unique_id=777691458]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FooterNavigation" type="Panel" parent="Footer/VBoxContainer" unique_id=959297820]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Footer/VBoxContainer/FooterNavigation" unique_id=1656826379]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Market" type="Button" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer" unique_id=118614999]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer/Market" unique_id=133342869]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_3ovsr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Skills" type="Button" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer" unique_id=103005921]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer/Skills" unique_id=536377318]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_5seab")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Game" type="Button" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer" unique_id=1347897001]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Forge" type="Button" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer" unique_id=128813094]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer/Forge" unique_id=1317917912]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_4xg86")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sawmill" type="Button" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer" unique_id=1310965568]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AdArea" type="Control" parent="Footer/VBoxContainer" unique_id=261403756]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Footer/VBoxContainer/AdArea" unique_id=1040859584]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_fsom3")
+
+[node name="ResourcePanel" type="Control" parent="." unique_id=866468030]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b62blrnkvopwu"]
+
+[ext_resource type="Texture2D" uid="uid://ds565qneq0bg1" path="res://assets/icones/wood.png" id="1_mvqgm"]
+[ext_resource type="Script" uid="uid://hu4w1u62ghjl" path="res://scenes/effects/wood/wood_effect.gd" id="1_sol5p"]
+
+[node name="WoodEffect" type="Node2D" unique_id=1520330060]
+script = ExtResource("1_sol5p")
+
+[node name="WoodSprite" type="Sprite2D" parent="." unique_id=481607854]
+scale = Vector2(0.61328125, 0.62890625)
+texture = ExtResource("1_mvqgm")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ot14dgk76y55"]
+
+[ext_resource type="Script" uid="uid://dspi3uidmbg56" path="res://scenes/effects/stone/stone_effect.gd" id="1_jhnna"]
+[ext_resource type="Texture2D" uid="uid://dj1mugaqmhxxo" path="res://assets/icones/stone.png" id="2_chfru"]
+
+[node name="StoneEffect" type="Node2D" unique_id=2019171637]
+script = ExtResource("1_jhnna")
+
+[node name="StoneSprite" type="Sprite2D" parent="." unique_id=665920683]
+texture = ExtResource("2_chfru")

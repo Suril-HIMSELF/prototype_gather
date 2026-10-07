@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://b57ekolubtry"]
+
+[ext_resource type="Texture2D" uid="uid://ds565qneq0bg1" path="res://assets/icones/wood.png" id="1_arfwm"]
+
+[node name="Sawmill" type="Control" unique_id=339830987]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2108601505]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Receip1" type="HBoxContainer" parent="VBoxContainer" unique_id=1497883879]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/Receip1" unique_id=499138028]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Receip1/Button" unique_id=313774836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_arfwm")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Receip1/Button" unique_id=260175059]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "5"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Receip1" unique_id=1824470574]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "→"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="VBoxContainer/Receip1" unique_id=1612453493]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+disabled = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Receip1/Button2" unique_id=1835889751]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Receip1/Button2" unique_id=973728937]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "1"
+horizontal_alignment = 1
+
+[node name="Receip2" type="HBoxContainer" parent="VBoxContainer" unique_id=1357956236]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/Receip2" unique_id=1606071416]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Receip2/Button" unique_id=2107264898]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_arfwm")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Receip2/Button" unique_id=1398717444]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Receip2" unique_id=359202611]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "→"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="VBoxContainer/Receip2" unique_id=1461996398]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+disabled = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Receip2/Button2" unique_id=2055184337]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Receip2/Button2" unique_id=1826548070]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "1"
+horizontal_alignment = 1
