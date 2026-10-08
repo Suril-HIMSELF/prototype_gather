@@ -6,3 +6,9 @@ enum RESOURCE {
 	STONE,
 	GOLD
 }
+
+
+enum RESOURCE_WOOD {
+	PLANK,
+	HANDLE,
+}

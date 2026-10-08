@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bdk18uiddu2kr" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
 [ext_resource type="PackedScene" uid="uid://cy6nelu8t38ky" path="res://scenes/game_menu/game_menu.tscn" id="2_0ebjn"]
+[ext_resource type="PackedScene" uid="uid://dcqr4gvn0crvo" path="res://scenes/inventory/inventory.tscn" id="2_3ovsr"]
 [ext_resource type="Texture2D" uid="uid://dnnbkf4aq43oh" path="res://assets/icones/fanion.png" id="3_ob46e"]
+[ext_resource type="PackedScene" uid="uid://b57ekolubtry" path="res://scenes/sawmill/sawmill.tscn" id="4_5seab"]
 [ext_resource type="Texture2D" uid="uid://y3736got0c5u" path="res://assets/atlas/icons_atlas_128.png" id="4_uqeha"]
 [ext_resource type="Texture2D" uid="uid://bncppdw50vfg0" path="res://assets/atlas/level_atlas.png" id="4_wem23"]
 
@@ -20,7 +22,7 @@ region = Rect2(896, 256, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ovsr"]
 atlas = ExtResource("4_uqeha")
-region = Rect2(0, 256, 128, 128)
+region = Rect2(256, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5seab"]
 atlas = ExtResource("4_uqeha")
@@ -54,7 +56,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Inventory" parent="Menu" unique_id=136098319 instance=ExtResource("2_3ovsr")]
+layout_mode = 1
+
 [node name="GameMenu" parent="Menu" unique_id=324072585 instance=ExtResource("2_0ebjn")]
+layout_mode = 1
+
+[node name="Sawmill" parent="Menu" unique_id=339830987 instance=ExtResource("4_5seab")]
 layout_mode = 1
 
 [node name="HeaderNavigation" type="Panel" parent="." unique_id=59040639]
@@ -202,11 +210,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Market" type="Button" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer" unique_id=118614999]
+[node name="Inventory" type="Button" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer" unique_id=118614999]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer/Market" unique_id=133342869]
+[node name="TextureRect" type="TextureRect" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer/Inventory" unique_id=133342869]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -250,6 +258,10 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Sawmill" type="Button" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer" unique_id=1310965568]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Forge" type="Button" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer" unique_id=128813094]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -265,10 +277,6 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_4xg86")
 expand_mode = 1
 stretch_mode = 5
-
-[node name="Sawmill" type="Button" parent="Footer/VBoxContainer/FooterNavigation/HBoxContainer" unique_id=1310965568]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="AdArea" type="Control" parent="Footer/VBoxContainer" unique_id=261403756]
 custom_minimum_size = Vector2(0, 150)
@@ -287,3 +295,7 @@ texture = SubResource("GradientTexture1D_fsom3")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="pressed" from="Footer/VBoxContainer/FooterNavigation/HBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="Footer/VBoxContainer/FooterNavigation/HBoxContainer/Game" to="." method="_on_game_pressed"]
+[connection signal="pressed" from="Footer/VBoxContainer/FooterNavigation/HBoxContainer/Sawmill" to="." method="_on_sawmill_pressed"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bx8kv3ebj2dq6"]
+
+[ext_resource type="Texture2D" uid="uid://s4wuf0s3ruir" path="res://assets/icones/wooden_plank.png" id="1_j7sde"]
+[ext_resource type="Script" uid="uid://dfsrkiy52r3wj" path="res://_data/item_data.gd" id="1_v82xm"]
+
+[resource]
+script = ExtResource("1_v82xm")
+id = "wooden_plank"
+display_name = "ITEM_003_NAME"
+icon = ExtResource("1_j7sde")
+metadata/_custom_type_script = "uid://dfsrkiy52r3wj"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b3hm2vmm8su44"]
+
+[ext_resource type="Texture2D" uid="uid://dj1mugaqmhxxo" path="res://assets/icones/stone.png" id="1_hgkku"]
+[ext_resource type="Script" uid="uid://dfsrkiy52r3wj" path="res://_data/item_data.gd" id="2_taqb4"]
+
+[resource]
+script = ExtResource("2_taqb4")
+id = "stone"
+display_name = "ITEM_002_NAME"
+icon = ExtResource("1_hgkku")
+metadata/_custom_type_script = "uid://dfsrkiy52r3wj"

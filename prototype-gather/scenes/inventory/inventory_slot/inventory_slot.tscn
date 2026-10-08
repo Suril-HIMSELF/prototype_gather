@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://clgf3obsynk2v"]
+
+[ext_resource type="Script" uid="uid://c382u8qrr2fj" path="res://scenes/inventory/inventory_slot/inventory_slot.gd" id="1_svnp7"]
+
+[node name="InventorySlot" type="Button" unique_id=1087039116]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("1_svnp7")
+
+[node name="SlotIcon" type="TextureRect" parent="." unique_id=2089606556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="SlotQuantity" type="Label" parent="." unique_id=1935084048]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 1

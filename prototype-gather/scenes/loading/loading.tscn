@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b4qq2b7vejsq2"]
+
+[ext_resource type="Texture2D" uid="uid://bnyrrls16fcip" path="res://assets/Typo_Logo_vertical.png" id="1_23b5w"]
+[ext_resource type="Script" uid="uid://bu5q1exv3fvu0" path="res://scenes/loading/loading.gd" id="1_vqqgw"]
+
+[node name="Loading" type="Control" unique_id=104561081]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vqqgw")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1193447241]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=126002571]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_23b5w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Fade" type="ColorRect" parent="." unique_id=86311655]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Warmup" type="TextureRect" parent="." unique_id=513246289]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1

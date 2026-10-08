@@ -13,17 +13,18 @@ var inventory: int = 0
 func _ready() -> void:
 	InputManager.input_detected.connect(_on_input_detected)
 	
-	wood_quantity.text = str(GameManager.inventory[Enums.RESOURCE.WOOD])
+	wood_quantity.text = str(GameManager.get_item_amount(Database.items["wood"]))
 
 
 func _process(delta: float) -> void:
 	if input != -1:
-		if input != 1:
-			quantity = 1
-			print("+1 wood")
-		else:
-			quantity = 5
-			print("+5 wood")
+		match input:
+			0:
+				quantity = 1
+			1:
+				quantity = 5
+			2,3,4,5:
+				quantity = 3
 		
 		collect_wood(quantity)
 	
@@ -33,13 +34,13 @@ func _process(delta: float) -> void:
 func collect_wood(qty: int) -> void:
 	play_wood()
 	
-	GameManager.inventory[Enums.RESOURCE.WOOD] += qty
+	GameManager.add_item(Database.items["wood"], qty)
 	
 	update_inventory()
 
 
 func update_inventory() -> void:
-	wood_quantity.text = str(GameManager.inventory[Enums.RESOURCE.WOOD])
+	wood_quantity.text = str(GameManager.get_item_amount(Database.items["wood"]))
 
 
 func play_wood() -> void:

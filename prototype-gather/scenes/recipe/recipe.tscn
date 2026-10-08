@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://uq5vpml5cg6a"]
+
+[ext_resource type="Script" uid="uid://cv81kvked2v8a" path="res://scenes/recipe/recipe.gd" id="1_428hh"]
+
+[node name="Recipe" type="HBoxContainer" unique_id=542517052]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -747.0
+offset_bottom = -1820.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+script = ExtResource("1_428hh")
+
+[node name="Ingredients" type="HBoxContainer" parent="." unique_id=1417154]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=721559344]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "→"
+
+[node name="Output" type="Button" parent="." unique_id=1159585416]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="OutputIcon" type="TextureRect" parent="Output" unique_id=683230058]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OutputQuantity" type="Label" parent="Output" unique_id=1742557453]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Output" to="." method="_on_output_pressed"]

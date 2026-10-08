@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="prototype_gather"
-run/main_scene="uid://fwvk6h1k10oq"
+run/main_scene="uid://b4qq2b7vejsq2"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 InputManager="*uid://csxtchbpys5m0"
 GameManager="*uid://bpx6j1g3oevii"
+Database="*uid://bpiphvn5wcu4a"
 
 [display]
 

@@ -13,17 +13,18 @@ var inventory: int = 0
 func _ready() -> void:
 	InputManager.input_detected.connect(_on_input_detected)
 	
-	stone_quantity.text = str(GameManager.inventory[Enums.RESOURCE.STONE])
+	stone_quantity.text = str(GameManager.get_item_amount(Database.items["stone"]))
 
 
 func _process(delta: float) -> void:
 	if input != -1:
-		if input != 1:
-			quantity = 1
-			print("+1 stone")
-		else:
-			quantity = 5
-			print("+5 stone")
+		match input:
+			0:
+				quantity = 1
+			1:
+				quantity = 5
+			2,3,4,5:
+				quantity = 3
 		
 		collect_stone(quantity)
 	
@@ -33,13 +34,13 @@ func _process(delta: float) -> void:
 func collect_stone(qty: int) -> void:
 	play_stone()
 	
-	GameManager.inventory[Enums.RESOURCE.STONE] += qty
+	GameManager.add_item(Database.items["stone"], qty)
 	
 	update_inventory()
 
 
 func update_inventory() -> void:
-	stone_quantity.text = str(GameManager.inventory[Enums.RESOURCE.STONE])
+	stone_quantity.text = str(GameManager.get_item_amount(Database.items["stone"]))
 
 
 func play_stone() -> void:
