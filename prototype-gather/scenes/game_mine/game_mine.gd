@@ -1,8 +1,11 @@
 extends Control
 
 @onready var center_control: Control = $CenterControl
-@onready var stone_quantity: Label = $Header/HBoxContainer/Control/StoneQuantity
-@onready var coal_quantity: Label = $Header/HBoxContainer/HBoxContainer/CoalQuantity
+@onready var stone_quantity: Label = $Header/HBoxContainer/StoneContainer/StoneQuantity
+@onready var iron_quantity: Label = $Header/HBoxContainer/IronContainer/IronQuantity
+@onready var gold_quantity: Label = $Header/HBoxContainer/GoldContainer/GoldQuantity
+@onready var sapphire_quantity: Label = $Header/HBoxContainer/SapphireContainer/SappphireQuantity
+@onready var ruby_quantity: Label = $Header/HBoxContainer/RubyContainer/RubyQuantity
 
 
 const wood_effect_scene = preload("res://scenes/effects/wood/wood_effect.tscn")
@@ -15,7 +18,10 @@ func _ready() -> void:
 	InputManager.input_detected.connect(_on_input_detected)
 	
 	stone_quantity.text = str(GameManager.get_item_amount(Database.items["stone"]))
-	coal_quantity.text = str(GameManager.get_item_amount(Database.items["coal"]))
+	iron_quantity.text = str(GameManager.get_item_amount(Database.items["iron"]))
+	gold_quantity.text = str(GameManager.get_item_amount(Database.items["gold"]))
+	sapphire_quantity.text = str(GameManager.get_item_amount(Database.items["sapphire"]))
+	ruby_quantity.text = str(GameManager.get_item_amount(Database.items["ruby"]))
 
 
 func _process(delta: float) -> void:
@@ -44,7 +50,10 @@ func collect_ore(ore: Data.ORE, qty: int) -> void:
 
 func update_inventory() -> void:
 	stone_quantity.text = str(GameManager.get_item_amount(Database.items["stone"]))
-	coal_quantity.text = str(GameManager.get_item_amount(Database.items["coal"]))
+	iron_quantity.text = str(GameManager.get_item_amount(Database.items["iron"]))
+	gold_quantity.text = str(GameManager.get_item_amount(Database.items["gold"]))
+	sapphire_quantity.text = str(GameManager.get_item_amount(Database.items["sapphire"]))
+	ruby_quantity.text = str(GameManager.get_item_amount(Database.items["ruby"]))
 
 
 func play_wood() -> void:

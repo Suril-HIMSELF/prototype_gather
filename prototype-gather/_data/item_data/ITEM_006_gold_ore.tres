@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ckja0xysguiqm"]
+
+[ext_resource type="Texture2D" uid="uid://beljoruunr8et" path="res://assets/atlas/ore_atlas_128.png" id="1_pvqjg"]
+[ext_resource type="Script" uid="uid://dfsrkiy52r3wj" path="res://_data/item_data.gd" id="1_smrli"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aky6s"]
+atlas = ExtResource("1_pvqjg")
+region = Rect2(128, 0, 128, 128)
+
+[resource]
+script = ExtResource("1_smrli")
+id = "gold"
+display_name = "ITEM_006_NAME"
+icon = SubResource("AtlasTexture_aky6s")
+metadata/_custom_type_script = "uid://dfsrkiy52r3wj"

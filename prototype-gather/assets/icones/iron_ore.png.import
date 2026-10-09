@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bncppdw50vfg0"
-path.s3tc="res://.godot/imported/level_atlas.png-284da0820735297725eb1a772725d0d6.s3tc.ctex"
-path.etc2="res://.godot/imported/level_atlas.png-284da0820735297725eb1a772725d0d6.etc2.ctex"
+uid="uid://dmo4ni6xjyxfn"
+path.s3tc="res://.godot/imported/iron_ore.png-848aaa4eab8209a46b2e35a9ed25d6d2.s3tc.ctex"
+path.etc2="res://.godot/imported/iron_ore.png-848aaa4eab8209a46b2e35a9ed25d6d2.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/atlas/level_atlas.png"
-dest_files=["res://.godot/imported/level_atlas.png-284da0820735297725eb1a772725d0d6.s3tc.ctex", "res://.godot/imported/level_atlas.png-284da0820735297725eb1a772725d0d6.etc2.ctex"]
+source_file="res://assets/icones/iron_ore.png"
+dest_files=["res://.godot/imported/iron_ore.png-848aaa4eab8209a46b2e35a9ed25d6d2.s3tc.ctex", "res://.godot/imported/iron_ore.png-848aaa4eab8209a46b2e35a9ed25d6d2.etc2.ctex"]
 
 [params]
 

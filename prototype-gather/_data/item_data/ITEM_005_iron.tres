@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://0wkraydo2fs5"]
+
+[ext_resource type="Texture2D" uid="uid://dmo4ni6xjyxfn" path="res://assets/icones/iron_ore.png" id="1_0i1xi"]
+[ext_resource type="Script" uid="uid://dfsrkiy52r3wj" path="res://_data/item_data.gd" id="2_335ay"]
+
+[resource]
+script = ExtResource("2_335ay")
+id = "iron"
+display_name = "ITEM_005_NAME"
+icon = ExtResource("1_0i1xi")
+metadata/_custom_type_script = "uid://dfsrkiy52r3wj"

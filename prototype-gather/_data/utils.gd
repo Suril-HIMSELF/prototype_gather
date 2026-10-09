@@ -5,8 +5,7 @@ static func get_total_ore_weight() -> float:
 	var total = 0
 	
 	total += Data.ORE_WEIGHT[Data.ORE.STONE]
-	total += Data.ORE_WEIGHT[Data.ORE.COAL]
-	total += Data.ORE_WEIGHT[Data.ORE.COPPER]
+	total += Data.ORE_WEIGHT[Data.ORE.IRON]
 	total += Data.ORE_WEIGHT[Data.ORE.GOLD]
 	total += Data.ORE_WEIGHT[Data.ORE.SAPPHIRE]
 	total += Data.ORE_WEIGHT[Data.ORE.RUBY]

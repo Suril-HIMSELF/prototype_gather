@@ -3,8 +3,7 @@ class_name Data extends Node
 
 enum ORE {
 	STONE,
-	COAL,
-	COPPER,
+	IRON,
 	GOLD,
 	SAPPHIRE,
 	RUBY,
@@ -14,8 +13,7 @@ enum ORE {
 
 const ORE_ID: Dictionary = {
 	ORE.STONE: "stone",
-	ORE.COAL: "coal",
-	ORE.COPPER: "copper",
+	ORE.IRON: "iron",
 	ORE.GOLD: "gold",
 	ORE.SAPPHIRE: "sapphire",
 	ORE.RUBY: "ruby",
@@ -24,9 +22,8 @@ const ORE_ID: Dictionary = {
 }
 
 const ORE_WEIGHT: Dictionary = {
-	ORE.STONE: 0.5,
-	ORE.COAL: 0.4,
-	ORE.COPPER: 0.3,
+	ORE.STONE: 0.7,
+	ORE.IRON: 0.3,
 	ORE.GOLD: 0.2,
 	ORE.SAPPHIRE: 0.1,
 	ORE.RUBY: 0.06,
