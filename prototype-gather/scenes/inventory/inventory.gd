@@ -27,11 +27,19 @@ func _create_inventory_slots():
 
 
 func _refresh_inventory() -> void:
-	for i in GameManager.inventory.size():
+	var items = GameManager.inventory.keys()
+
+	for i in inventory_slots.get_child_count():
 		var inventory_slot = inventory_slots.get_child(i)
-		var item = GameManager.inventory.keys()[i]
-		
-		inventory_slot.setup(item, GameManager.get_item_amount(item))
+
+		if i < items.size():
+			var item_id = items[i]
+			inventory_slot.setup(
+				item_id,
+				GameManager.inventory[item_id]
+			)
+		else:
+			inventory_slot.clear()
 
 
 func _on_item_crafted() -> void:

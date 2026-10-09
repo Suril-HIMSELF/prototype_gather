@@ -6,8 +6,10 @@ class_name InventorySlot extends Button
 var inventory_index: int = -1
 
 func setup(item: ItemData, amount: int) -> void:
-	if item == null or amount <= 0:
-		return
-	
 	slot_icon.texture = item.icon
 	slot_quantity.text = str(amount)
+
+
+func clear() -> void:
+	slot_icon.texture = null
+	slot_quantity.text = ""
