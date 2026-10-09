@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://b0db8ajm3xh8m"]
 
 [ext_resource type="Script" uid="uid://bpf7efcu44ftq" path="res://_data/recipe_ingredient.gd" id="1_nsnlr"]
-[ext_resource type="Resource" uid="uid://dfpbbj516ej2t" path="res://_data/item_data/wood.tres" id="2_0kfyd"]
+[ext_resource type="Resource" uid="uid://dfpbbj516ej2t" path="res://_data/item_data/ITEM_001_wood.tres" id="2_0kfyd"]
 [ext_resource type="Script" uid="uid://d0x5dm6tto6jm" path="res://_data/recipe_data.gd" id="2_h2jnv"]
-[ext_resource type="Resource" uid="uid://bx8kv3ebj2dq6" path="res://_data/item_data/wooden_plank.tres" id="3_0kfyd"]
+[ext_resource type="Resource" uid="uid://bx8kv3ebj2dq6" path="res://_data/item_data/ITEM_003_wooden_plank.tres" id="3_0kfyd"]
 
 [sub_resource type="Resource" id="Resource_0wpgx"]
 script = ExtResource("1_nsnlr")

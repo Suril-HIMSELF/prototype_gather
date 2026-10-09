@@ -34,10 +34,7 @@ func _refresh_inventory() -> void:
 
 		if i < items.size():
 			var item_id = items[i]
-			inventory_slot.setup(
-				item_id,
-				GameManager.inventory[item_id]
-			)
+			inventory_slot.setup(item_id, GameManager.inventory[item_id])
 		else:
 			inventory_slot.clear()
 

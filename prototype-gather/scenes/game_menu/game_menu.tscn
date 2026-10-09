@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b3m01s4c87r0s" path="res://game_menu.gd" id="1_28db2"]
 [ext_resource type="Texture2D" uid="uid://dm6l588sbcoax" path="res://assets/backgrounds/game_wood.png" id="2_7byhx"]
 [ext_resource type="Texture2D" uid="uid://xaphu0wmqmsw" path="res://assets/backgrounds/game_stone.png" id="3_7byhx"]
+[ext_resource type="Texture2D" uid="uid://dix2vx6id18v4" path="res://assets/backgrounds/game_mine.png" id="4_s1qca"]
 
 [node name="GameMenu" type="Control" unique_id=324072585]
 layout_mode = 3
@@ -31,6 +32,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 70
 columns = 2
 
 [node name="WoodButton" type="Button" parent="ScrollContainer/GridContainer" unique_id=1981871416]
@@ -63,5 +65,21 @@ texture = ExtResource("3_7byhx")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="MineButton" type="Button" parent="ScrollContainer/GridContainer" unique_id=344793039]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/MineButton" unique_id=2034888799]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_s1qca")
+expand_mode = 1
+stretch_mode = 5
+
 [connection signal="pressed" from="ScrollContainer/GridContainer/WoodButton" to="." method="_on_wood_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/GridContainer/StoneButton" to="." method="_on_stone_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/GridContainer/MineButton" to="." method="_on_mine_button_pressed"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://18h7wr52ca5x"]
+
+[ext_resource type="Script" uid="uid://dfsrkiy52r3wj" path="res://_data/item_data.gd" id="1_dtail"]
+
+[resource]
+script = ExtResource("1_dtail")
+id = "sapphire"
+display_name = "ITEM_008_NAME"
+metadata/_custom_type_script = "uid://dfsrkiy52r3wj"
