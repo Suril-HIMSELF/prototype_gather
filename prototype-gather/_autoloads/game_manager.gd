@@ -3,6 +3,18 @@ extends Node
 signal item_crafted
 
 
+### Stats ###
+
+var stats = {
+	Data.STAT.GAIN_SWIPE: 3.0,
+	Data.STAT.GAIN_TAP: 1.0,
+	Data.STAT.GAIN_HOLD: 5.0,
+	
+	Data.STAT.CRITICAL_CHANCE: 0.0,
+	Data.STAT.CRITICAL_POWER: 2.0,
+}
+
+
 ### Inventory ###
 
 var inventory: Dictionary = {}
@@ -67,7 +79,3 @@ func craft(recipe: RecipeData) -> bool:
 	item_crafted.emit()
 	
 	return true
-		
-		
-		
-		

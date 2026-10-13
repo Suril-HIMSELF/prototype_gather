@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://b3tdus2xv0e87"]
+
+[ext_resource type="Script" uid="uid://bpf7efcu44ftq" path="res://_data/recipe_ingredient.gd" id="1_2m78w"]
+[ext_resource type="Resource" uid="uid://18h7wr52ca5x" path="res://_data/item_data/sapphire_raw.tres" id="2_2m78w"]
+[ext_resource type="Resource" uid="uid://dqfv6owieunqd" path="res://_data/item_data/sapphire_gem.tres" id="3_2m78w"]
+[ext_resource type="Script" uid="uid://d0x5dm6tto6jm" path="res://_data/recipe_data.gd" id="4_w5uq1"]
+
+[sub_resource type="Resource" id="Resource_0wpgx"]
+script = ExtResource("1_2m78w")
+item = ExtResource("2_2m78w")
+amount = 5
+metadata/_custom_type_script = "uid://bpf7efcu44ftq"
+
+[resource]
+script = ExtResource("4_w5uq1")
+id = "sapphire_gem"
+type = 2
+ingredients = Array[ExtResource("1_2m78w")]([SubResource("Resource_0wpgx")])
+output = ExtResource("3_2m78w")
+metadata/_custom_type_script = "uid://d0x5dm6tto6jm"

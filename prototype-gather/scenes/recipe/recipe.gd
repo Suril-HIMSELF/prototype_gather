@@ -1,12 +1,12 @@
-extends HBoxContainer
+extends Panel
 
 var recipe: RecipeData
 
 
 func setup(_recipe: RecipeData) -> void:
-	var ingredients: HBoxContainer = $Ingredients
-	var output_icon: TextureRect = $Output/OutputIcon
-	var output_quantity: Label = $Output/OutputQuantity
+	var ingredients: HBoxContainer = $HBoxContainer/Ingredients
+	var output_icon: TextureRect = $HBoxContainer/Output/OutputIcon
+	var output_quantity: Label = $HBoxContainer/Output/OutputQuantity
 	
 	recipe = _recipe
 	

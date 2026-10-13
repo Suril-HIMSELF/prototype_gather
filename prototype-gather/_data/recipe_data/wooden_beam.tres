@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://bbfdyax6x1if1"]
+
+[ext_resource type="Script" uid="uid://bpf7efcu44ftq" path="res://_data/recipe_ingredient.gd" id="1_wk7jm"]
+[ext_resource type="Resource" uid="uid://dfpbbj516ej2t" path="res://_data/item_data/wood.tres" id="2_wk7jm"]
+[ext_resource type="Resource" uid="uid://bx8kv3ebj2dq6" path="res://_data/item_data/wooden_plank.tres" id="3_jehoj"]
+[ext_resource type="Script" uid="uid://d0x5dm6tto6jm" path="res://_data/recipe_data.gd" id="4_icda2"]
+
+[sub_resource type="Resource" id="Resource_0wpgx"]
+script = ExtResource("1_wk7jm")
+item = ExtResource("2_wk7jm")
+amount = 5
+metadata/_custom_type_script = "uid://bpf7efcu44ftq"
+
+[resource]
+script = ExtResource("4_icda2")
+id = "wooden_beam"
+type = 1
+ingredients = Array[ExtResource("1_wk7jm")]([SubResource("Resource_0wpgx")])
+output = ExtResource("3_jehoj")
+metadata/_custom_type_script = "uid://d0x5dm6tto6jm"

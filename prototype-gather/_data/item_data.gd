@@ -1,6 +1,12 @@
 class_name ItemData
 extends Resource
 
+enum ITEM_TYPE {
+	WOOD,
+	STONE,
+	GEM,
+}
+
 @export var id: String
-@export var display_name: String
 @export var icon: Texture2D
+@export var type: ITEM_TYPE

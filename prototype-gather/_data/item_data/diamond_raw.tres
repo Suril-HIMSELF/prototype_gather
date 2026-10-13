@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cgp3mah7k4mfr"]
+
+[ext_resource type="Texture2D" uid="uid://valji8m0tpcn" path="res://assets/atlas/mine_atlas.png" id="1_lw8wh"]
+[ext_resource type="Script" uid="uid://dfsrkiy52r3wj" path="res://_data/item_data.gd" id="2_2ncvq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6oxq"]
+atlas = ExtResource("1_lw8wh")
+region = Rect2(640, 0, 128, 128)
+
+[resource]
+script = ExtResource("2_2ncvq")
+id = "diamond_raw"
+icon = SubResource("AtlasTexture_e6oxq")
+type = 2
+metadata/_custom_type_script = "uid://dfsrkiy52r3wj"

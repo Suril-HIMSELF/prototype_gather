@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://cp3pq5vetjkwb"]
+
+[ext_resource type="Script" uid="uid://bpf7efcu44ftq" path="res://_data/recipe_ingredient.gd" id="1_qaoja"]
+[ext_resource type="Resource" uid="uid://d7otft0rnia" path="res://_data/item_data/silver_ore.tres" id="2_qaoja"]
+[ext_resource type="Resource" uid="uid://b84vjwhhofic8" path="res://_data/item_data/silver_ingot.tres" id="3_qaoja"]
+[ext_resource type="Script" uid="uid://d0x5dm6tto6jm" path="res://_data/recipe_data.gd" id="4_sycxm"]
+
+[sub_resource type="Resource" id="Resource_0wpgx"]
+script = ExtResource("1_qaoja")
+item = ExtResource("2_qaoja")
+amount = 5
+metadata/_custom_type_script = "uid://bpf7efcu44ftq"
+
+[resource]
+script = ExtResource("4_sycxm")
+id = "silver_ingot"
+ingredients = Array[ExtResource("1_qaoja")]([SubResource("Resource_0wpgx")])
+output = ExtResource("3_qaoja")
+metadata/_custom_type_script = "uid://d0x5dm6tto6jm"

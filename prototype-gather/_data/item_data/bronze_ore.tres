@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cr2a5xpn8j4hn"]
+
+[ext_resource type="Texture2D" uid="uid://bl8wsi5b2lumn" path="res://assets/atlas/quarry_atlas.png" id="1_vkq23"]
+[ext_resource type="Script" uid="uid://dfsrkiy52r3wj" path="res://_data/item_data.gd" id="2_w2djq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_871nl"]
+atlas = ExtResource("1_vkq23")
+region = Rect2(384, 0, 128, 128)
+
+[resource]
+script = ExtResource("2_w2djq")
+id = "bronze_ore"
+icon = SubResource("AtlasTexture_871nl")
+type = 1
+metadata/_custom_type_script = "uid://dfsrkiy52r3wj"

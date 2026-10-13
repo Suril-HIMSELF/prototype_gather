@@ -1,7 +1,7 @@
 extends Control
 
 @onready var center_control: Control = $CenterControl
-@onready var wood_quantity: Label = $Header/HBoxContainer/WoodQuantity
+@onready var wood_quantity: Label = $Footer/HBoxContainer/WoodQuantity
 
 
 const wood_effect_scene = preload("res://scenes/effects/wood/wood_effect.tscn")
@@ -20,11 +20,16 @@ func _process(delta: float) -> void:
 	if input != -1:
 		match input:
 			0:
-				quantity = 1
+				quantity = GameManager.stats[Data.STAT.GAIN_TAP]
 			1:
-				quantity = 5
+				quantity = GameManager.stats[Data.STAT.GAIN_HOLD]
 			2,3,4,5:
-				quantity = 3
+				quantity = GameManager.stats[Data.STAT.GAIN_SWIPE]
+		
+		var rdm_crit = randf()
+		
+		if rdm_crit <= GameManager.stats[Data.STAT.CRITICAL_CHANCE]:
+			quantity += quantity * GameManager.stats[Data.STAT.CRITICAL_POWER]
 		
 		collect_wood(quantity)
 	
@@ -53,5 +58,5 @@ func _on_input_detected(type: InputManager.InputType) -> void:
 	input = type
 
 
-func _on_home_button_pressed() -> void:
+func _on_return_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")

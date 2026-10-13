@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bkjw0bm6dg04e"]
+
+[ext_resource type="Script" uid="uid://dpwhlq715c1fi" path="res://scenes/effects/ore/ore_effect.gd" id="1_62rb3"]
+
+[node name="OreEffect" type="Node2D" unique_id=1113670812]
+script = ExtResource("1_62rb3")
+
+[node name="OreSprite" type="Sprite2D" parent="." unique_id=156519081]

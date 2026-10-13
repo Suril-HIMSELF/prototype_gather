@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://cupmuiw8fxr8u"]
+
+[ext_resource type="Script" uid="uid://bpf7efcu44ftq" path="res://_data/recipe_ingredient.gd" id="1_rrwi8"]
+[ext_resource type="Resource" uid="uid://cgp3mah7k4mfr" path="res://_data/item_data/diamond_raw.tres" id="2_rrwi8"]
+[ext_resource type="Resource" uid="uid://doho4vmjs6dmd" path="res://_data/item_data/diamond_gem.tres" id="3_rrwi8"]
+[ext_resource type="Script" uid="uid://d0x5dm6tto6jm" path="res://_data/recipe_data.gd" id="4_mfbbe"]
+
+[sub_resource type="Resource" id="Resource_0wpgx"]
+script = ExtResource("1_rrwi8")
+item = ExtResource("2_rrwi8")
+amount = 5
+metadata/_custom_type_script = "uid://bpf7efcu44ftq"
+
+[resource]
+script = ExtResource("4_mfbbe")
+id = "diamond_gem"
+type = 2
+ingredients = Array[ExtResource("1_rrwi8")]([SubResource("Resource_0wpgx")])
+output = ExtResource("3_rrwi8")
+metadata/_custom_type_script = "uid://d0x5dm6tto6jm"

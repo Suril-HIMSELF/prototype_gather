@@ -5,7 +5,7 @@ extends Control
 
 @onready var inventory: Inventory = $Menu/Inventory
 @onready var game_menu: Control = $Menu/GameMenu
-@onready var sawmill: Control = $Menu/Sawmill
+@onready var workshop: Control = $Menu/Workshop
 
 
 @onready var game: Button = $Footer/VBoxContainer/FooterNavigation/HBoxContainer/Game
@@ -34,8 +34,5 @@ func _on_game_pressed() -> void:
 	game_menu.visible = true
 
 
-func _on_sawmill_pressed() -> void:
-	for node in menu.get_children():
-		node.visible = false
-	
-	sawmill.visible = true
+func _on_workshop_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/workshop/workshop.tscn")

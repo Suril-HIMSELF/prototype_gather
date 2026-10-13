@@ -40,7 +40,7 @@ func _refresh_inventory() -> void:
 
 
 func _on_item_crafted() -> void:
-	_create_inventory_slots()
+	#_create_inventory_slots()
 	
 	await get_tree().process_frame
 	

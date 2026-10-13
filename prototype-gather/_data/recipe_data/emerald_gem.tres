@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://4q8fwgdyrxlp"]
+
+[ext_resource type="Script" uid="uid://bpf7efcu44ftq" path="res://_data/recipe_ingredient.gd" id="1_uk2cn"]
+[ext_resource type="Resource" uid="uid://d1ef417snpmhb" path="res://_data/item_data/emerald_raw.tres" id="2_uk2cn"]
+[ext_resource type="Resource" uid="uid://sfpfhl75jugn" path="res://_data/item_data/emerald_gem.tres" id="3_uk2cn"]
+[ext_resource type="Script" uid="uid://d0x5dm6tto6jm" path="res://_data/recipe_data.gd" id="4_1xn7i"]
+
+[sub_resource type="Resource" id="Resource_0wpgx"]
+script = ExtResource("1_uk2cn")
+item = ExtResource("2_uk2cn")
+amount = 5
+metadata/_custom_type_script = "uid://bpf7efcu44ftq"
+
+[resource]
+script = ExtResource("4_1xn7i")
+id = "emerald_gem"
+type = 2
+ingredients = Array[ExtResource("1_uk2cn")]([SubResource("Resource_0wpgx")])
+output = ExtResource("3_uk2cn")
+metadata/_custom_type_script = "uid://d0x5dm6tto6jm"

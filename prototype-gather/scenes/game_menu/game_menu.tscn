@@ -1,9 +1,61 @@
 [gd_scene format=3 uid="uid://cy6nelu8t38ky"]
 
 [ext_resource type="Script" uid="uid://b3m01s4c87r0s" path="res://game_menu.gd" id="1_28db2"]
-[ext_resource type="Texture2D" uid="uid://dm6l588sbcoax" path="res://assets/backgrounds/game_wood.png" id="2_7byhx"]
-[ext_resource type="Texture2D" uid="uid://xaphu0wmqmsw" path="res://assets/backgrounds/game_stone.png" id="3_7byhx"]
-[ext_resource type="Texture2D" uid="uid://dix2vx6id18v4" path="res://assets/backgrounds/game_mine.png" id="4_s1qca"]
+[ext_resource type="Texture2D" uid="uid://dm6l588sbcoax" path="res://assets/menu/game_wood.png" id="2_7byhx"]
+[ext_resource type="Texture2D" uid="uid://xaphu0wmqmsw" path="res://assets/menu/game_stone.png" id="3_7byhx"]
+[ext_resource type="Texture2D" uid="uid://xgm4yk5dgi05" path="res://assets/frames/wood_frame.png" id="3_rjd4x"]
+[ext_resource type="Texture2D" uid="uid://dix2vx6id18v4" path="res://assets/menu/game_mine.png" id="4_s1qca"]
+[ext_resource type="Texture2D" uid="uid://bnkm6bw08h6f1" path="res://assets/frames/stone_frame.png" id="5_ld3s1"]
+[ext_resource type="Texture2D" uid="uid://c2nov205l3o4e" path="res://assets/frames/jewel_frame.png" id="7_hmyl8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1qca"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vbfko"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5et6w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjd4x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2gdur"]
+texture = ExtResource("3_rjd4x")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ld3s1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmyl8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2gdur"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lecld"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_852qa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lecld"]
+texture = ExtResource("5_ld3s1")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jinhd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mvooq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wjrgy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41fsq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0o2q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_852qa"]
+texture = ExtResource("7_hmyl8")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
 
 [node name="GameMenu" type="Control" unique_id=324072585]
 layout_mode = 3
@@ -17,29 +69,32 @@ script = ExtResource("1_28db2")
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1775168762]
 clip_contents = false
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 100.0
-offset_top = 200.0
-offset_right = -100.0
-offset_bottom = -350.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=583046539]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/h_separation = 70
-theme_override_constants/v_separation = 70
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 100
 columns = 2
 
-[node name="WoodButton" type="Button" parent="ScrollContainer/GridContainer" unique_id=1981871416]
-custom_minimum_size = Vector2(400, 400)
+[node name="WoodContainer" type="VBoxContainer" parent="ScrollContainer/GridContainer" unique_id=157588589]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/WoodButton" unique_id=1540239262]
+[node name="WoodButton" type="Button" parent="ScrollContainer/GridContainer/WoodContainer" unique_id=1981871416]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s1qca")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vbfko")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5et6w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rjd4x")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/WoodContainer/WoodButton" unique_id=1540239262]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,11 +105,38 @@ texture = ExtResource("2_7byhx")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="StoneButton" type="Button" parent="ScrollContainer/GridContainer" unique_id=859829396]
-custom_minimum_size = Vector2(400, 400)
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/WoodContainer" unique_id=884367292]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_2gdur")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/WoodContainer/Panel" unique_id=1587055990]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 38
+text = "WOOD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CarryContainer" type="VBoxContainer" parent="ScrollContainer/GridContainer" unique_id=1506248503]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/StoneButton" unique_id=2044776552]
+[node name="QuarryButton" type="Button" parent="ScrollContainer/GridContainer/CarryContainer" unique_id=859829396]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ld3s1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hmyl8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2gdur")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lecld")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_852qa")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/CarryContainer/QuarryButton" unique_id=2044776552]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,11 +147,38 @@ texture = ExtResource("3_7byhx")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MineButton" type="Button" parent="ScrollContainer/GridContainer" unique_id=344793039]
-custom_minimum_size = Vector2(400, 400)
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/CarryContainer" unique_id=1708799522]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_lecld")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/CarryContainer/Panel" unique_id=1172752719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 38
+text = "QUARRY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/GridContainer" unique_id=1317024524]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/MineButton" unique_id=2034888799]
+[node name="MineButton" type="Button" parent="ScrollContainer/GridContainer/VBoxContainer" unique_id=344793039]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jinhd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mvooq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wjrgy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_41fsq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v0o2q")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/VBoxContainer/MineButton" unique_id=2034888799]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,6 +189,25 @@ texture = ExtResource("4_s1qca")
 expand_mode = 1
 stretch_mode = 5
 
-[connection signal="pressed" from="ScrollContainer/GridContainer/WoodButton" to="." method="_on_wood_button_pressed"]
-[connection signal="pressed" from="ScrollContainer/GridContainer/StoneButton" to="." method="_on_stone_button_pressed"]
-[connection signal="pressed" from="ScrollContainer/GridContainer/MineButton" to="." method="_on_mine_button_pressed"]
+[node name="Panel" type="Panel" parent="ScrollContainer/GridContainer/VBoxContainer" unique_id=1019859822]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_852qa")
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/VBoxContainer/Panel" unique_id=1456965834]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 38
+text = "MINE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ScrollContainer/GridContainer/WoodContainer/WoodButton" to="." method="_on_wood_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/GridContainer/CarryContainer/QuarryButton" to="." method="_on_quarry_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/GridContainer/VBoxContainer/MineButton" to="." method="_on_mine_button_pressed"]

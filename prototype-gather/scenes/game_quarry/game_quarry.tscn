@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://bmyqvnf87b3of"]
+
+[ext_resource type="Script" uid="uid://cfl8xcwqbdij7" path="res://scenes/game_quarry/game_quarry.gd" id="1_6t6e8"]
+[ext_resource type="Texture2D" uid="uid://b2fnijw3h8nq4" path="res://assets/backgrounds/background_stone.png" id="1_ppsph"]
+[ext_resource type="Texture2D" uid="uid://bltv0h22jn3el" path="res://assets/frames/stone_frame_return.png" id="3_3sq2n"]
+[ext_resource type="Texture2D" uid="uid://bnkm6bw08h6f1" path="res://assets/frames/stone_frame.png" id="4_a0iup"]
+[ext_resource type="Texture2D" uid="uid://bl8wsi5b2lumn" path="res://assets/atlas/quarry_atlas.png" id="4_i3sv1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o8m6a"]
+texture = ExtResource("3_3sq2n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ept0m"]
+texture = ExtResource("4_a0iup")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k108a"]
+texture = ExtResource("4_a0iup")
+texture_margin_left = 60.0
+texture_margin_top = 60.0
+texture_margin_right = 60.0
+texture_margin_bottom = 60.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vijt"]
+atlas = ExtResource("4_i3sv1")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvu0n"]
+atlas = ExtResource("4_i3sv1")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8n7b"]
+atlas = ExtResource("4_i3sv1")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppe3s"]
+atlas = ExtResource("4_i3sv1")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8fgy"]
+atlas = ExtResource("4_i3sv1")
+region = Rect2(512, 0, 128, 128)
+
+[node name="GameQuarry" type="Control" unique_id=1581542543]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6t6e8")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1513175447]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ppsph")
+
+[node name="Header" type="HBoxContainer" parent="." unique_id=1970956194]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 170.0
+grow_horizontal = 2
+
+[node name="ReturnButton" type="Button" parent="Header" unique_id=256387810]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_o8m6a")
+
+[node name="Panel" type="Panel" parent="Header" unique_id=1220235163]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxTexture_ept0m")
+
+[node name="Label" type="Label" parent="Header/Panel" unique_id=980079765]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterControl" type="Control" parent="." unique_id=1409239633]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Footer" type="Panel" parent="." unique_id=834558476]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -350.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_k108a")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Footer" unique_id=1369189121]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StoneContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=526161393]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StoneIcon" type="TextureRect" parent="Footer/HBoxContainer/StoneContainer" unique_id=1360648576]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_1vijt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StoneQuantity" type="Label" parent="Footer/HBoxContainer/StoneContainer" unique_id=1740292791]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[node name="IronContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=1321860949]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IronIcon" type="TextureRect" parent="Footer/HBoxContainer/IronContainer" unique_id=267914259]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_jvu0n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IronQuantity" type="Label" parent="Footer/HBoxContainer/IronContainer" unique_id=1450028250]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[node name="CopperContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=1063831200]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CopperIcon" type="TextureRect" parent="Footer/HBoxContainer/CopperContainer" unique_id=1948590778]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_b8n7b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CopperQuantity" type="Label" parent="Footer/HBoxContainer/CopperContainer" unique_id=908807578]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[node name="BronzeContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=871354849]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BronzeIcon" type="TextureRect" parent="Footer/HBoxContainer/BronzeContainer" unique_id=4198331]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_ppe3s")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BronzeQuantity" type="Label" parent="Footer/HBoxContainer/BronzeContainer" unique_id=1446776121]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[node name="SilverContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=1941666851]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SilverIcon" type="TextureRect" parent="Footer/HBoxContainer/SilverContainer" unique_id=1834634925]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_u8fgy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SilverQuantity" type="Label" parent="Footer/HBoxContainer/SilverContainer" unique_id=441308540]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Header/ReturnButton" to="." method="_on_return_button_pressed"]

@@ -2,12 +2,26 @@
 
 [ext_resource type="Script" uid="uid://chd4kts87c36n" path="res://scenes/game_wood/game_wood.gd" id="1_q7enw"]
 [ext_resource type="Texture2D" uid="uid://k038efghnhex" path="res://assets/backgrounds/background_wood.png" id="2_p8lry"]
+[ext_resource type="Texture2D" uid="uid://byhwgyso5qpnd" path="res://assets/frames/wood_frame_return.png" id="3_ktdr8"]
 [ext_resource type="Texture2D" uid="uid://ds565qneq0bg1" path="res://assets/icones/wood.png" id="3_wcck2"]
-[ext_resource type="Texture2D" uid="uid://cq35q4ok60uku" path="res://assets/icones/home.png" id="4_ktdr8"]
+[ext_resource type="Texture2D" uid="uid://xgm4yk5dgi05" path="res://assets/frames/wood_frame.png" id="4_b5tai"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wcck2"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_npry3"]
+texture = ExtResource("3_ktdr8")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktdr8"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lywjy"]
+texture = ExtResource("4_b5tai")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktdr8"]
+texture = ExtResource("4_b5tai")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
 
 [node name="GameWood" type="Control" unique_id=2114965168]
 layout_mode = 3
@@ -29,56 +43,37 @@ texture = ExtResource("2_p8lry")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Header" type="Panel" parent="." unique_id=1801934931]
-custom_minimum_size = Vector2(0, 200)
+[node name="Header" type="HBoxContainer" parent="." unique_id=1060916299]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 170.0
 grow_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Header" unique_id=1422978520]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = 40.0
-offset_right = -40.0
-offset_bottom = -40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="WoodIcon" type="TextureRect" parent="Header/HBoxContainer" unique_id=1593754078]
-custom_minimum_size = Vector2(100, 100)
+[node name="ReturnButton" type="Button" parent="Header" unique_id=1885148325]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-texture = ExtResource("3_wcck2")
-expand_mode = 1
-stretch_mode = 5
+theme_override_styles/normal = SubResource("StyleBoxTexture_npry3")
 
-[node name="WoodQuantity" type="Label" parent="Header/HBoxContainer" unique_id=1251710911]
+[node name="Panel" type="Panel" parent="Header" unique_id=678505170]
+custom_minimum_size = Vector2(600, 150)
 layout_mode = 2
-theme_override_font_sizes/font_size = 38
+size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxTexture_lywjy")
 
-[node name="HomeButton" type="Button" parent="Header/HBoxContainer" unique_id=553213116]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wcck2")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ktdr8")
-
-[node name="TextureRect2" type="TextureRect" parent="Header/HBoxContainer/HomeButton" unique_id=1207860987]
-custom_minimum_size = Vector2(100, 100)
+[node name="Label" type="Label" parent="Header/Panel" unique_id=588091801]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 10
-texture = ExtResource("4_ktdr8")
-expand_mode = 1
-stretch_mode = 5
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CenterControl" type="Control" parent="." unique_id=434881935]
 layout_mode = 1
@@ -94,4 +89,41 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="pressed" from="Header/HBoxContainer/HomeButton" to="." method="_on_home_button_pressed"]
+[node name="Footer" type="Panel" parent="." unique_id=1801934931]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -350.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ktdr8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Footer" unique_id=1422978520]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="WoodIcon" type="TextureRect" parent="Footer/HBoxContainer" unique_id=1593754078]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("3_wcck2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WoodQuantity" type="Label" parent="Footer/HBoxContainer" unique_id=1251710911]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+
+[connection signal="pressed" from="Header/ReturnButton" to="." method="_on_return_button_pressed"]

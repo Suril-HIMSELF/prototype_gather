@@ -2,12 +2,38 @@
 
 [ext_resource type="Texture2D" uid="uid://bagkwg37jp61j" path="res://assets/backgrounds/background_mine.png" id="1_672w2"]
 [ext_resource type="Script" uid="uid://hp4icuuimwu0" path="res://scenes/game_mine/game_mine.gd" id="1_mrx8k"]
-[ext_resource type="Texture2D" uid="uid://dj1mugaqmhxxo" path="res://assets/icones/stone.png" id="2_mrx8k"]
-[ext_resource type="Texture2D" uid="uid://cq35q4ok60uku" path="res://assets/icones/home.png" id="3_g61ng"]
-[ext_resource type="Texture2D" uid="uid://dmo4ni6xjyxfn" path="res://assets/icones/iron_ore.png" id="4_g61ng"]
-[ext_resource type="Texture2D" uid="uid://beljoruunr8et" path="res://assets/atlas/ore_atlas_128.png" id="5_keuko"]
+[ext_resource type="Texture2D" uid="uid://dejixhoa1w45e" path="res://assets/frames/frame_wood.png" id="3_3dy85"]
+[ext_resource type="Texture2D" uid="uid://bnr1n4y87dpvk" path="res://assets/frames/jewel_frame_return.png" id="3_ykq21"]
+[ext_resource type="Texture2D" uid="uid://c2nov205l3o4e" path="res://assets/frames/jewel_frame.png" id="4_3dy85"]
+[ext_resource type="Texture2D" uid="uid://bcuyum6vgo6cv" path="res://assets/backgrounds/background_tooltip.png" id="4_vd0kw"]
+[ext_resource type="Texture2D" uid="uid://valji8m0tpcn" path="res://assets/atlas/mine_atlas.png" id="5_keuko"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vd0kw"]
+texture = ExtResource("3_ykq21")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_utsou"]
+texture = ExtResource("4_3dy85")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u14oh"]
+texture = ExtResource("3_3dy85")
+texture_margin_left = 60.0
+texture_margin_top = 60.0
+texture_margin_right = 60.0
+texture_margin_bottom = 60.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ykq21"]
+atlas = ExtResource("5_keuko")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd0kw"]
+atlas = ExtResource("5_keuko")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u14oh"]
 atlas = ExtResource("5_keuko")
 region = Rect2(256, 0, 128, 128)
 
@@ -15,9 +41,13 @@ region = Rect2(256, 0, 128, 128)
 atlas = ExtResource("5_keuko")
 region = Rect2(384, 0, 128, 128)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_keuko"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_utsou"]
+atlas = ExtResource("5_keuko")
+region = Rect2(512, 0, 128, 128)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ykq21"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_keuko"]
+atlas = ExtResource("5_keuko")
+region = Rect2(640, 0, 128, 128)
 
 [node name="GameMine" type="Control" unique_id=1120793730]
 layout_mode = 3
@@ -39,120 +69,37 @@ texture = ExtResource("1_672w2")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Header" type="Panel" parent="." unique_id=206894430]
-custom_minimum_size = Vector2(0, 200)
+[node name="Header" type="HBoxContainer" parent="." unique_id=1803302127]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 170.0
 grow_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Header" unique_id=1724314878]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = 40.0
-offset_right = -40.0
-offset_bottom = -40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="StoneContainer" type="HBoxContainer" parent="Header/HBoxContainer" unique_id=2098875797]
+[node name="ReturnButton" type="Button" parent="Header" unique_id=333384949]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_vd0kw")
 
-[node name="StoneIcon" type="TextureRect" parent="Header/HBoxContainer/StoneContainer" unique_id=1673587333]
-custom_minimum_size = Vector2(100, 100)
+[node name="Panel" type="Panel" parent="Header" unique_id=1974971195]
+custom_minimum_size = Vector2(600, 150)
 layout_mode = 2
-texture = ExtResource("2_mrx8k")
-expand_mode = 1
-stretch_mode = 5
+size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxTexture_utsou")
 
-[node name="StoneQuantity" type="Label" parent="Header/HBoxContainer/StoneContainer" unique_id=1921693095]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 38
-
-[node name="IronContainer" type="HBoxContainer" parent="Header/HBoxContainer" unique_id=1009376545]
-layout_mode = 2
-
-[node name="IronIcon" type="TextureRect" parent="Header/HBoxContainer/IronContainer" unique_id=2127172786]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = ExtResource("4_g61ng")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="IronQuantity" type="Label" parent="Header/HBoxContainer/IronContainer" unique_id=1300053202]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 38
-
-[node name="GoldContainer" type="HBoxContainer" parent="Header/HBoxContainer" unique_id=1728716282]
-layout_mode = 2
-
-[node name="GoldIcon" type="TextureRect" parent="Header/HBoxContainer/GoldContainer" unique_id=872996199]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = ExtResource("4_g61ng")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="GoldQuantity" type="Label" parent="Header/HBoxContainer/GoldContainer" unique_id=227505500]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 38
-
-[node name="SapphireContainer" type="HBoxContainer" parent="Header/HBoxContainer" unique_id=769940925]
-layout_mode = 2
-
-[node name="SapphireIcon" type="TextureRect" parent="Header/HBoxContainer/SapphireContainer" unique_id=935713450]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("AtlasTexture_ykq21")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="SappphireQuantity" type="Label" parent="Header/HBoxContainer/SapphireContainer" unique_id=1715546483]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 38
-
-[node name="RubyContainer" type="HBoxContainer" parent="Header/HBoxContainer" unique_id=1638537728]
-layout_mode = 2
-
-[node name="RubyIcon" type="TextureRect" parent="Header/HBoxContainer/RubyContainer" unique_id=338842490]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("AtlasTexture_3dy85")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="RubyQuantity" type="Label" parent="Header/HBoxContainer/RubyContainer" unique_id=1656695770]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 38
-
-[node name="HomeButton" type="Button" parent="Header/HBoxContainer" unique_id=1659958461]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_styles/normal = SubResource("StyleBoxEmpty_keuko")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ykq21")
-
-[node name="TextureRect2" type="TextureRect" parent="Header/HBoxContainer/HomeButton" unique_id=38105568]
-custom_minimum_size = Vector2(100, 100)
+[node name="Label" type="Label" parent="Header/Panel" unique_id=1329100964]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 10
-texture = ExtResource("3_g61ng")
-expand_mode = 1
-stretch_mode = 5
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CenterControl" type="Control" parent="." unique_id=643506494]
 layout_mode = 1
@@ -168,4 +115,149 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="pressed" from="Header/HBoxContainer/HomeButton" to="." method="_on_home_button_pressed"]
+[node name="Footer" type="Panel" parent="." unique_id=206894430]
+z_index = 1
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -350.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_u14oh")
+
+[node name="TextureRect" type="TextureRect" parent="Footer" unique_id=1521607984]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vd0kw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Footer" unique_id=1724314878]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="StoneContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=142622702]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StoneIcon" type="TextureRect" parent="Footer/HBoxContainer/StoneContainer" unique_id=1673587333]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_ykq21")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StoneQuantity" type="Label" parent="Footer/HBoxContainer/StoneContainer" unique_id=1921693095]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[node name="GoldContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=2067841821]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoldIcon" type="TextureRect" parent="Footer/HBoxContainer/GoldContainer" unique_id=872996199]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_vd0kw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GoldQuantity" type="Label" parent="Footer/HBoxContainer/GoldContainer" unique_id=227505500]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[node name="SapphireContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=2142512313]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SapphireIcon" type="TextureRect" parent="Footer/HBoxContainer/SapphireContainer" unique_id=935713450]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_u14oh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SappphireQuantity" type="Label" parent="Footer/HBoxContainer/SapphireContainer" unique_id=1715546483]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[node name="RubyContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=1842057330]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RubyIcon" type="TextureRect" parent="Footer/HBoxContainer/RubyContainer" unique_id=338842490]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3dy85")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RubyQuantity" type="Label" parent="Footer/HBoxContainer/RubyContainer" unique_id=1656695770]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[node name="EmeraldContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=1171034014]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EmeraldIcon" type="TextureRect" parent="Footer/HBoxContainer/EmeraldContainer" unique_id=650642242]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_utsou")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EmeraldQuantity" type="Label" parent="Footer/HBoxContainer/EmeraldContainer" unique_id=1847684069]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[node name="DiamondContainer" type="VBoxContainer" parent="Footer/HBoxContainer" unique_id=31200786]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DiamondIcon" type="TextureRect" parent="Footer/HBoxContainer/DiamondContainer" unique_id=1065107023]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("AtlasTexture_keuko")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DiamondQuantity" type="Label" parent="Footer/HBoxContainer/DiamondContainer" unique_id=948412451]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Header/ReturnButton" to="." method="_on_return_button_pressed"]

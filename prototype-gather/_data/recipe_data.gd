@@ -3,13 +3,13 @@ extends Resource
 
 
 enum RECIPE_TYPE {
+	FORGE,
 	SAWMILL,
-	FORGE
+	JEWELRY,
 }
 
 
 @export var id: String
-@export var display_name: String
 @export var type: RECIPE_TYPE
 
 @export_category("Ingredients")

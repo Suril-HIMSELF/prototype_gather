@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dko1abp20joal"]
+
+[ext_resource type="Texture2D" uid="uid://valji8m0tpcn" path="res://assets/atlas/mine_atlas.png" id="1_xmdqk"]
+[ext_resource type="Script" uid="uid://dfsrkiy52r3wj" path="res://_data/item_data.gd" id="1_xo2pq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta5a3"]
+atlas = ExtResource("1_xmdqk")
+region = Rect2(384, 0, 128, 128)
+
+[resource]
+script = ExtResource("1_xo2pq")
+id = "ruby_raw"
+icon = SubResource("AtlasTexture_ta5a3")
+type = 2
+metadata/_custom_type_script = "uid://dfsrkiy52r3wj"

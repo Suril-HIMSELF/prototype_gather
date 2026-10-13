@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cdwqif0o8qoq1"]
+
+[ext_resource type="Script" uid="uid://dfsrkiy52r3wj" path="res://_data/item_data.gd" id="1_cm8k7"]
+
+[resource]
+script = ExtResource("1_cm8k7")
+id = "wooden_spear"
+display_name = "ITEM_016_NAME"
+metadata/_custom_type_script = "uid://dfsrkiy52r3wj"
